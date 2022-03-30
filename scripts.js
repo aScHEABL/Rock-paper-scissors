@@ -39,8 +39,7 @@ function playRound (playerSelection) {
 }
 */
 console.log("hello world!")
-
-let computerScores, playerScores;
+/*
 function playRound (playerSelection) {
     const options = ["Rock", "Paper", "Scissors"];
     playerSelection = prompt("Enter \"rock\", \"paper\" or \"scissors\"")
@@ -49,33 +48,33 @@ function playRound (playerSelection) {
     switch (true) {
         case playerSelection === "Rock" && computerSelection === "Scissors":
             console.log("You win! " + playerSelection + " beats " + computerSelection + " .");
-            playerScores = playerScores++;
+            playerScores++;
             break;
         case playerSelection === "Rock" && computerSelection === "Paper":
             console.log("You lose! " + computerSelection + " beats " + playerSelection + " .");
-            computerScores = computerScores++;
+            computerScores++;
             break;
         case playerSelection === "Paper" && computerSelection === "Rock":
             console.log("You win! " + playerSelection + " beats " + computerSelection + " .");
-            playerScores = playerScores++;
+            playerScores++;
             break;
         case playerSelection === "Paper" && computerSelection === "Scissors":
             console.log("You lose! " + computerSelection + " beats " + playerSelection + " .");
-            computerScores = computerScores++;
+            computerScores++;
             break;
         case playerSelection === "Scissors" && computerSelection === "Paper":
             console.log("You win! " + playerSelection + " beats " + computerSelection + " .");
-            playerScores = playerScores++;
+            playerScores++;
             break;
         case playerSelection  === "Scissors" && computerSelection === "Rock":
             console.log("You lose! " + computerSelection + " beats " + playerSelection + " .");
-            computerScores = computerScores++;
+            computerScores++;
             break;
         case playerSelection === computerSelection:
             console.log("It's a tie!");
         }
 }
-
+*/
 
 function game() {
     for (let i = 0; i < 5; i++) {
@@ -89,3 +88,56 @@ function game() {
         console.log("Tie! Try again next time!");
     }
 }
+
+
+let computerScores = 0;
+let playerScores = 0;
+function playRound () {
+    const options = ["Rock", "Paper", "Scissors"];
+    playerSelection = prompt("Enter \"rock\", \"paper\" or \"scissors\"")
+    playerSelection = playerSelection.toUpperCase().slice(0,1) + playerSelection.slice(1).toLowerCase()
+    let computerSelection = options[Math.floor(Math.random() * options.length)]
+    switch (true) {
+        case playerSelection === "Rock" && computerSelection === "Scissors":
+            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+            playerScores++;
+            console.log("Player scores : " + playerScores);
+            console.log("Computer scores : " + computerScores);
+            break;
+        case playerSelection === "Rock" && computerSelection === "Paper":
+            console.log("You lose! " + computerSelection + " beats " + playerSelection + ".");
+            computerScores++;
+            console.log("Player scores : " + playerScores);
+            console.log("Computer scores : " + computerScores);
+            break;
+        case playerSelection === "Paper" && computerSelection === "Rock":
+            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+            playerScores++;
+            console.log("Player scores : " + playerScores);
+            console.log("Computer scores : " + computerScores);
+            break;
+        case playerSelection === "Paper" && computerSelection === "Scissors":
+            console.log("You lose! " + computerSelection + " beats " + playerSelection + ".");
+            computerScores++;
+            console.log("Player scores : " + playerScores);
+            console.log("Computer scores : " + computerScores);
+            break;
+        case playerSelection === "Scissors" && computerSelection === "Paper":
+            console.log("You win! " + playerSelection + " beats " + computerSelection + ".");
+            playerScores++;
+            console.log("Player scores : " + playerScores);
+            console.log("Computer scores : " + computerScores);
+            break;
+        case playerSelection  === "Scissors" && computerSelection === "Rock":
+            console.log("You lose! " + computerSelection + " beats " + playerSelection + ".");
+            computerScores++;
+            console.log("Player scores : " + playerScores);
+            console.log("Computer scores : " + computerScores);
+            break;
+        case playerSelection === computerSelection:
+            console.log("It's a tie!");
+            console.log("Player scores : " + playerScores);
+            console.log("Computer scores : " + computerScores);
+        }
+}
+
