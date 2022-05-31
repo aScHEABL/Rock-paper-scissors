@@ -3,11 +3,13 @@ console.log(`Hello World!`);
 let computerSelection,
   playerSelection = "";
 let computerScores,
-  playerScores = 0;
+  playerScores,
+  computerIndexOfChoices,
+  playerIndexOfChoices = 0;
 const choices = [`rock`, `paper`, `scissors`];
 const RPS_DOM = choices.map((dom_ID) => document.querySelector(`#${dom_ID}`));
 
-for (let loopIteration = 0; loopIteration < 3; loopIteration++) {
+for (let loopIteration = 0; loopIteration < choices.length; loopIteration++) {
   RPS_DOM[loopIteration].addEventListener(`click`, () => {
     playerSelection = choices[loopIteration];
     console.log(`Player:${playerSelection}`);
@@ -16,32 +18,40 @@ for (let loopIteration = 0; loopIteration < 3; loopIteration++) {
 }
 
 let computerPlay = () => {
-  computerSelection = choices[Math.floor(Math.random() * 3)];
+  computerSelection = choices[Math.floor(Math.random() * choices.length)];
   console.log(`Computer:${computerSelection}`);
 };
 
 let playGame = () => {
-  computerPlay();
-  if (
-    (playerSelection === "rock" && computerSelection === "scissors") ||
-    (playerSelection === "paper" && computerSelection === "rock") ||
-    (playerSelection === "scissors" && computerSelection === "paper")
-  ) {
-    console.log(`Player won this round!`);
-    playerScores++;
-  } else if (
-    (playerSelection === "rock" && computerSelection === "paper") ||
-    (playerSelection === "paper" && computerSelection === "scissors") ||
-    (playerSelection === "scissors" && computerSelection === "rock")
-  ) {
-    console.log(`Player lost this round!`);
-    computerScores++;
-  } else console.log(`This round is a tie!`);
+    computerPlay();
+    compareChoice(playerSelection, computerSelection);
 
   if (playerScores === 5 || computerScores === 5) {
-    let determineWhoWins =
+    let checkWinner =
       playerScores === 5
         ? console.log(`Player won this game!`)
         : console.log(`Computer won this game!`);
   }
+};
+
+let compareChoice = (A, B) => {
+    for (let loopIteration = 0; loopIteration < choices.length; loopIteration++) {
+        if (choices[loopIteration] === A) computerIndexOfChoices = loopIteration;
+    };
+    for (let loopIteration = 0; loopIteration < choices.length; loopIteration++) {
+        if (choices[loopIteration] === B) playerIndexOfChoices = loopIteration;
+    };
+    switch (((playerIndexOfChoices - computerIndexOfChoices) - 1) % 3) {
+        case 1:
+            console.log(`Player won this round!`);
+            playerScores++;
+            break;
+        case 0:
+            console.log(`Player lost this round!`);
+            computerScores++;
+            break;    
+        case -1:
+            console.log(`This round is a tie!`);
+            break;
+    }
 };
