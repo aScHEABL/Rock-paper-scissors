@@ -12,14 +12,12 @@ const reset_DOM = document.querySelector(`#reset`);
 for (let i = 0; i < choices.length; i++) {
     RPS_DOM[i].addEventListener(`click`, () => {
         playerIndexOfChoices = i;
-        console.log(`Player:${choices[playerIndexOfChoices]}`);
         playGame();
     });
 };
 
 let computerPlay = () => {
     computerIndexOfChoices = Math.floor(Math.random() * choices.length);
-    console.log(`Computer:${choices[computerIndexOfChoices]}`);
 };
 
 let playGame = () => {
@@ -41,17 +39,17 @@ let playGame = () => {
 let compareChoices = (player, computer) => {
     switch (((player - computer) - 1) % 3) {
         case 0:
-            result_DOM.textContent = `Result:${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You won this round!`
+            result_DOM.textContent = `Result : ${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You won this round!`
             playerScores++;
-            pScores.textContent = `Player Scores:${playerScores}`;
+            pScores.textContent = `Player Scores : ${playerScores}`;
             break;
         case -2:
-            result_DOM.textContent = `Result:${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You lost this round!`
+            result_DOM.textContent = `Result : ${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You lost this round!`
             computerScores++;
-            cScores.textContent = `Computer Scores:${computerScores}`;
+            cScores.textContent = `Computer Scores : ${computerScores}`;
             break;
         case -1:
-            result_DOM.textContent = `Result:${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. It's a tie this round!`
+            result_DOM.textContent = `Result : ${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. It's a tie this round!`
             break;
     };
 };
