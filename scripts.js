@@ -57,6 +57,14 @@ let compareChoices = (player, computer) => {
 let resetGame = () => {
     reset_DOM.disabled = false;
     reset_DOM.addEventListener(`click`, () => {
-        location.reload();
-    })
-}
+        playerSelection = "", computerSelection = "";
+        playerScores = 0, computerScores = 0, playerIndexOfChoices = 0, computerIndexOfChoices = 0;
+        result_DOM.textContent = `Result : `
+        scores_DOM[0].textContent = `Player Scores : 0`;
+        scores_DOM[1].textContent = `Computer Scores : 0`;
+        reset_DOM.disabled = true;
+        for (i = 0; i < choices.length; i++) {
+        document.querySelector(`#${choices[i]}`).disabled = false;
+        };
+    });
+};
