@@ -1,4 +1,128 @@
+body {
+    background-color: #323232;
+}
+
 .styled {
     border-style: solid;
-    border-width: 3px;
+    border-width: 5px;
+}
+
+#title-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#title-section > div {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-size: 72px;
+    color: white;
+}
+
+.subtitle {
+    font-size: 48px;
+    color: white;
+}
+
+.heading-1 {
+    font-size: 36px;
+    color: white;
+}
+
+#button-section {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+#button-section > button {
+    font-size: 32px;
+    background-color: #9e193f;
+    color: white;
+    padding: 8px 16px 8px 16px;
+}
+
+#scores-heading {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+}
+
+#scores-heading > div {
+    font-size: 24px;
+    margin: 12px 0px 12px 0px;
+}
+
+#player-score-lebel {
+    padding-left: 16px;
+    color: white;
+    text-align: center;
+}
+
+#computer-score-label {
+    padding-left: 4px;
+    color: white;
+    text-align: center;
+}
+
+#scores-section {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+}
+
+#scores-section > div {
+    display: flex;
+}
+
+#scores-section > div > p {
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 150px;
+    margin: 0px 0px 0px 0px;
+    font-size: 36px;
+}
+
+#result-heading {
+    display: flex;
+    justify-content: center;
+}
+
+#result-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result-heading > div {
+    font-size: 24px;
+    color: white;
+    margin: 8px 0px 8px 0px;
+}
+
+#result-section > div {
+    width: 600px;
+    height: 200px;
+    line-height: 200px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 36px;
+}
+
+#play-again-button-section {
+    display: flex;
+    justify-content: center;
+}
+
+#play-again-button-section > button {
+    font-size: 32px;
+    background-color: #9e193f;
+    color: white;
+    padding: 8px 16px 8px 16px;
+    margin-top: 10px;
 }

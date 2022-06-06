@@ -38,18 +38,23 @@ let playGame = () => {
 
 let compareChoices = (player, computer) => {
     switch (((player - computer) - 1) % 3) {
+        case 1:
+            result_DOM.textContent = `${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You lost this round!`
+            computerScores++;
+            cScores.textContent = `${computerScores}`;
+            break;
         case 0:
-            result_DOM.textContent = `Result : ${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You won this round!`
+            result_DOM.textContent = `${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You won this round!`
             playerScores++;
-            pScores.textContent = `Player Scores : ${playerScores}`;
+            pScores.textContent = `${playerScores}`;
             break;
         case -2:
-            result_DOM.textContent = `Result : ${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You lost this round!`
+            result_DOM.textContent = `${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. You lost this round!`
             computerScores++;
-            cScores.textContent = `Computer Scores : ${computerScores}`;
+            cScores.textContent = `${computerScores}`;
             break;
         case -1:
-            result_DOM.textContent = `Result : ${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. It's a tie this round!`
+            result_DOM.textContent = `${choices[playerIndexOfChoices]} vs ${choices[computerIndexOfChoices]}. It's a tie this round!`
             break;
     };
 };
@@ -59,12 +64,12 @@ let resetGame = () => {
     reset_DOM.addEventListener(`click`, () => {
         playerSelection = "", computerSelection = "";
         playerScores = 0, computerScores = 0, playerIndexOfChoices = 0, computerIndexOfChoices = 0;
-        result_DOM.textContent = `Result : `
-        scores_DOM[0].textContent = `Player Scores : 0`;
-        scores_DOM[1].textContent = `Computer Scores : 0`;
+        result_DOM.textContent = ``
+        scores_DOM[0].textContent = `0`;
+        scores_DOM[1].textContent = `0`;
         reset_DOM.disabled = true;
-        for (i = 0; i < choices.length; i++) {
-        document.querySelector(`#${choices[i]}`).disabled = false;
+        for (let i = 0; i < choices.length; i++) {
+        RPS_DOM[i].disabled = false;
         };
     });
 };

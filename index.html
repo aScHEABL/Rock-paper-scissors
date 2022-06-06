@@ -9,12 +9,32 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <button class="styled" id="rock">Rock</button>
-    <button class="styled" id="paper">Paper</button>
-    <button class="styled" id="scissors">Scissors</button>
-    <button class="styled" id="reset" disabled>Reset</button>
-    <div><p class="styled" id="displayResult">Result : </p></div>
-    <div><p class="styled" id="pScores">Player Scores : 0</p></div>
-    <div><p class="styled" id="cScores">Computer Scores : 0</p></div>
+    <div id="title-section">
+        <div><h1 class="title">Rock Paper Scissors</h1></div>
+        <div><h2 class="subtitle">Choose Your Weapon</h2></div>
+        <div><h3 class="heading-1">First To 5 Wins!</h3></div>
+    </div>
+    <div id="button-section">
+        <button class="styled" id="rock">Rock</button>
+        <button class="styled" id="paper">Paper</button>
+        <button class="styled" id="scissors">Scissors</button>
+    </div>
+    <div id="scores-heading">
+        <div id="player-score-lebel">Player Scores</div>
+        <div id="computer-score-label">Computer Scores</div>
+    </div>
+    <div id="scores-section">
+        <div><p id="pScores" class="styled">0</p></div>
+        <div><p id="cScores" class="styled">0</p></div>
+    </div>
+    <div id="result-heading">
+        <div>Result</div>
+    </div>
+    <div id="result-section">
+        <div class="styled" id="displayResult"></div>
+    </div>
+    <div id="play-again-button-section">
+        <button class="styled" id="reset" disabled>Play Again!</button>
+    </div>
 </body>
 </html>
